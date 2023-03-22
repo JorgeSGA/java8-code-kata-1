@@ -66,6 +66,7 @@ Tests annotated with `@Difficult` are more difficult. :grin:
 ## Where are the answers?
 
 Check the 'solution' branch, but please try to solve by yourself at first.
+It's also en the commit 7b0bcce
 
 ## Modules
 
