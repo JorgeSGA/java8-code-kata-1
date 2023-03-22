@@ -11,7 +11,6 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.EnumSet;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -35,15 +34,10 @@ public class Exercise9Test extends ClassicOnlineStore {
          * Implement a {@link Collector} which can create a String with comma separated names shown in the assertion.
          * The collector will be used by serial stream.
          */
-        Supplier<Object> supplier = StringBuilder::new;
-        BiConsumer<Object, String> accumulator = (o, s) -> {
-            if (((StringBuilder) o).length() != 0) {
-                ((StringBuilder) o).append(",");
-            }
-            ((StringBuilder) o).append(s);
-        };
-        BinaryOperator<Object> combiner = (o, o2) -> ((StringBuilder) o).append(o2);
-        Function<Object, String> finisher = Object::toString;
+        Supplier<Object> supplier = null;
+        BiConsumer<Object, String> accumulator = null;
+        BinaryOperator<Object> combiner = null;
+        Function<Object, String> finisher = null;
 
         Collector<String, ?, String> toCsv =
             new CollectorImpl<>(supplier, accumulator, combiner, finisher, Collections.emptySet());
@@ -60,10 +54,10 @@ public class Exercise9Test extends ClassicOnlineStore {
          * values as {@link Set} of customers who are wanting to buy that item.
          * The collector will be used by parallel stream.
          */
-        Supplier<Map<String, Set<String>>> supplier = null;
-        BiConsumer<Map<String, Set<String>>, Customer> accumulator = null;
-        BinaryOperator<Map<String, Set<String>>> combiner = null;
-        Function<Map<String, Set<String>>, Map<String, Set<String>>> finisher = null;
+        Supplier<Object> supplier = null;
+        BiConsumer<Object, Customer> accumulator = null;
+        BinaryOperator<Object> combiner = null;
+        Function<Object, Map<String, Set<String>>> finisher = null;
 
         Collector<Customer, ?, Map<String, Set<String>>> toItemAsKey =
             new CollectorImpl<>(supplier, accumulator, combiner, finisher, EnumSet.of(

@@ -31,8 +31,8 @@ public class Exercise1Test extends ClassicOnlineStore {
          * Iterate {@link customerIterable} with {@link Iterable#forEach} and use the {@link Consumer}
          * to finish creating the name list.
          */
-        Consumer<Customer> consumer = o -> nameList.add(o.getName());
-        customerIterable.forEach(consumer);
+        Consumer<Object> consumer = null;
+        // customerIterable.
 
         assertThat(nameList.toString(), is("[Joe, Steven, Patrick, Diana, Chris, Kathy, Alice, Andrew, Martin, Amy]"));
     }
@@ -46,8 +46,8 @@ public class Exercise1Test extends ClassicOnlineStore {
          * Create a {@link Predicate} which predicates if the input string contains "e".
          * Remove elements from {@link nameCollection} which contains "e" using {@link Collection#removeIf}.
          */
-        Predicate<Object> predicate = o -> o.toString().contains("e");
-        nameCollection.removeIf(predicate);
+        Predicate<Object> predicate = null;
+        // nameCollection.
 
         assertThat(nameCollection.toString(), is("[Patrick, Chris]"));
     }
@@ -61,8 +61,8 @@ public class Exercise1Test extends ClassicOnlineStore {
          * Create a {@link UnaryOperator} which returns given string wrapped with "()".
          * Replace the elements in {@link nameList} with string wrapped with "()" using {@link List#replaceAll} .
          */
-        UnaryOperator<String> unaryOperator = o -> "(" + o+")";
-        nameList.replaceAll(unaryOperator);
+        UnaryOperator<Object> unaryOperator = null;
+        // nameList.
 
         assertThat(nameList.toString(), is("[(Joe), (Steven), (Patrick), (Chris)]"));
     }
@@ -75,8 +75,8 @@ public class Exercise1Test extends ClassicOnlineStore {
         /**
          * Create a {@link Comparator} to sort the name list by their name's length in ascending order.
          */
-        Comparator<Object> comparator = Comparator.comparingInt(o -> o.toString().length());
-        nameList.sort(comparator);
+        Comparator<Object> comparator = null;
+        // nameList.
 
         assertThat(nameList.toString(), is("[Joe, Chris, Steven, Patrick]"));
     }
@@ -90,7 +90,7 @@ public class Exercise1Test extends ClassicOnlineStore {
          * Create a serial {@link Stream} using {@link Collection#stream}
          * You can learn about {@link Stream} APIs at stream-api module.
          */
-        Stream<String> nameStream = nameList.stream();
+        Stream<Object> nameStream = null;
 
         assertThat(nameStream.count(), is(4L));
         assertThat(nameStream.isParallel(), is(false));
@@ -104,7 +104,7 @@ public class Exercise1Test extends ClassicOnlineStore {
         /**
          * Create a parallel {@link Stream} using {@link Collection#parallelStream} or {@link Stream#parallel}
          */
-        Stream<String> nameParallelStream = nameList.parallelStream();
+        Stream<Object> nameParallelStream = null;
 
         assertThat(nameParallelStream.count(), is(4L));
         assertThat(nameParallelStream.isParallel(), is(true));
