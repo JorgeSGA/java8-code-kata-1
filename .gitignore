@@ -2,3 +2,4 @@
 stream-api/target
 common-test-tool/target
 collection-interfaces/target
+*.iml
