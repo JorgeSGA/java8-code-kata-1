@@ -8,6 +8,7 @@ import common.test.tool.entity.Shop;
 
 import org.junit.Test;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 import java.util.function.Predicate;
