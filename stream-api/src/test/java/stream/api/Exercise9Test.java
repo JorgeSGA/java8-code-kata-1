@@ -32,6 +32,12 @@ import static org.junit.Assert.*;
 
 public class Exercise9Test extends ClassicOnlineStore {
 
+    // Los Collector en Java 8 funcionan de la siguiente forma (https://www.baeldung.com/java-8-collectors):
+    //  El supplier nos indica como se va a crear el objeto que se usara para agregar todo
+    //  El acumulador nos indica como se incluye cada elemento en el objeto final
+    //  El combiner nos permite juntar dos elementos en uno si los dos elementos son iguales
+    //  El finisher nos da la operacion que se ejecuta tras terminar el stream
+    
     @Easy @Test
     public void simplestStringJoin() {
         List<Customer> customerList = this.mall.getCustomerList();
